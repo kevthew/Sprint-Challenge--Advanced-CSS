@@ -1,1 +1,42 @@
 // Mixins Here
+.flexRow{
+    display: flex;
+    flex-flow: row;
+}
+
+.flexColumn{
+    display: flex;
+    flex-flow: column;
+}
+
+.btnItem(@bgColor, @fontColor){
+    background: @bgColor;
+    color: @fontColor;
+    width: 100px;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    border: 1px solid @bgColor;
+    &:hover{
+        background: @fontColor;
+        color: @bgColor;
+    }
+    @media @phone{
+        width: 100%;
+    }
+}
+
+.animate{
+    @keyframes h1Animation {
+        0%   {color: @ebony-clay;}
+        25%  {color: @river-bend;}
+        50%  {color: @shuttle-gray;}
+        100% {color: @waterloo;}
+    }
+    animation-name: h1Animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
